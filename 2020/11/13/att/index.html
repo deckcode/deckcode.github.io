@@ -33,6 +33,16 @@
 
 
 
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
 
 <body>
     <header class="navbar-fixed">
@@ -466,287 +476,284 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>例题代码</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span>chrome<span class="token punctuation">.</span></span><span class="token class-name">ChromeDriver</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span>chrome<span class="token punctuation">.</span></span><span class="token class-name">ChromeOptions</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span>interactions<span class="token punctuation">.</span></span><span class="token class-name">Actions</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span>remote<span class="token punctuation">.</span></span><span class="token class-name">DesiredCapabilities</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span>support<span class="token punctuation">.</span>ui<span class="token punctuation">.</span></span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span>support<span class="token punctuation">.</span>ui<span class="token punctuation">.</span></span><span class="token class-name">Select</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span>support<span class="token punctuation">.</span>ui<span class="token punctuation">.</span></span><span class="token class-name">WebDriverWait</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span></span><span class="token class-name">WebDriver</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span></span><span class="token class-name">WebElement</span><span class="token punctuation">;</span>
+<pre><code class="java">import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">TimeUnit</span><span class="token punctuation">;</span>
+import java.util.concurrent.TimeUnit;
 
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span></span><span class="token class-name">By</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>openqa<span class="token punctuation">.</span>selenium<span class="token punctuation">.</span></span><span class="token class-name">JavascriptExecutor</span><span class="token punctuation">;</span>
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Example</span> <span class="token punctuation">&#123;</span>
+public class Example &#123;
 
-	<span class="token comment">// Mooctest Selenium Example</span>
+    // Mooctest Selenium Example
 
-	<span class="token comment">// &lt;!> Check if selenium-standalone.jar is added to build path.</span>
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">delay</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
-			<span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-			<span class="token comment">// TODO 自动生成的 catch 块</span>
-			e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-	<span class="token punctuation">&#125;</span>
+    // &lt;!&gt; Check if selenium-standalone.jar is added to build path.
+    public static void delay(int a) &#123;
+        try &#123;
+            Thread.sleep(a);
+        &#125; catch (InterruptedException e) &#123;
+            // TODO 自动生成的 catch 块
+            e.printStackTrace();
+        &#125;
+    &#125;
 
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">register</span><span class="token punctuation">(</span><span class="token class-name">WebDriver</span> d<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token comment">// d.get("http://114.215.176.95:60505/FindU/html/index.jsp");</span>
-		<span class="token comment">// d.findElement(By.xpath("/html/body/header/div[1]/div[2]/ul/li[1]/a[3]")).click();</span>
-		<span class="token comment">// d.findElement(By.xpath("//*[@id=\"Name\"]")).sendKeys("skybos");</span>
-		<span class="token comment">// d.findElement(By.xpath("//*[@id=\"Email\"]")).sendKeys("233@qq.com");</span>
-		<span class="token comment">// d.findElement(By.xpath("//*[@id=\"Tel\"]")).sendKeys("18376542345");</span>
-		<span class="token comment">// d.findElement(By.xpath("//*[@id=\"Regist\"]/input[4]")).sendKeys("123456");</span>
-		<span class="token comment">// d.findElement(By.xpath("//*[@id=\"Regist\"]/input[5]")).sendKeys("123456");</span>
-		<span class="token comment">// d.findElement(By.xpath("//*[@id=\"Regist\"]/div/span/label/input")).click();</span>
-		<span class="token comment">// d.findElement(By.xpath("//*[@id=\"Regist\"]/input[6]")).click();</span>
+    public static void register(WebDriver d) &#123;
+        // d.get(&quot;http://114.215.176.95:60505/FindU/html/index.jsp&quot;);
+        // d.findElement(By.xpath(&quot;/html/body/header/div[1]/div[2]/ul/li[1]/a[3]&quot;)).click();
+        // d.findElement(By.xpath(&quot;//*[@id=\&quot;Name\&quot;]&quot;)).sendKeys(&quot;skybos&quot;);
+        // d.findElement(By.xpath(&quot;//*[@id=\&quot;Email\&quot;]&quot;)).sendKeys(&quot;233@qq.com&quot;);
+        // d.findElement(By.xpath(&quot;//*[@id=\&quot;Tel\&quot;]&quot;)).sendKeys(&quot;18376542345&quot;);
+        // d.findElement(By.xpath(&quot;//*[@id=\&quot;Regist\&quot;]/input[4]&quot;)).sendKeys(&quot;123456&quot;);
+        // d.findElement(By.xpath(&quot;//*[@id=\&quot;Regist\&quot;]/input[5]&quot;)).sendKeys(&quot;123456&quot;);
+        // d.findElement(By.xpath(&quot;//*[@id=\&quot;Regist\&quot;]/div/span/label/input&quot;)).click();
+        // d.findElement(By.xpath(&quot;//*[@id=\&quot;Regist\&quot;]/input[6]&quot;)).click();
 
-	<span class="token punctuation">&#125;</span>
+    &#125;
 
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token class-name">WebDriver</span> d<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    public static void login(WebDriver d) &#123;
 
-		<span class="token comment">//</span>
+        //
 
-		<span class="token class-name">WebElement</span> e <span class="token operator">=</span> <span class="token function">wait</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"Name"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        WebElement e = wait(d, 10, By.name(&quot;Name&quot;));
+        delay(200);
 
-		<span class="token comment">// d.findElement(By.xpath("/html/body/header/div/div[2]/ul/li[1]/a[2]")).click();</span>
+        // d.findElement(By.xpath(&quot;/html/body/header/div/div[2]/ul/li[1]/a[2]&quot;)).click();
 
-		<span class="token comment">//</span>
+        //
 
-		<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        delay(200);
 
-		e<span class="token punctuation">.</span><span class="token function">sendKeys</span><span class="token punctuation">(</span><span class="token string">"233@qq.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        e.sendKeys(&quot;233@qq.com&quot;);
 
-		<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        delay(200);
 
-		d<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"Password"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sendKeys</span><span class="token punctuation">(</span><span class="token string">"123456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        d.findElement(By.name(&quot;Password&quot;)).sendKeys(&quot;123456&quot;);
+        delay(5000);
 
-		d<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//*[@id=\"agileits-sign-in-page\"]/div/form/input[3]"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        d.findElement(By.xpath(&quot;//*[@id=\&quot;agileits-sign-in-page\&quot;]/div/form/input[3]&quot;)).click();
 
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"失物招领"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
+        System.out.println(&quot;失物招领&quot;);
+    &#125;
 
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">WebElement</span> <span class="token function">wait</span><span class="token punctuation">(</span><span class="token class-name">WebDriver</span> d<span class="token punctuation">,</span> <span class="token keyword">int</span> sec<span class="token punctuation">,</span> <span class="token class-name">By</span> by<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token class-name">WebDriverWait</span> wait <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebDriverWait</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> sec<span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword">return</span> wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">presenceOfElementLocated</span><span class="token punctuation">(</span>by<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
+    public static WebElement wait(WebDriver d, int sec, By by) &#123;
+        WebDriverWait wait = new WebDriverWait(d, sec,1000);
+        return wait.until(ExpectedConditions.presenceOfElementLocated(by));
+    &#125;
 
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token class-name">WebDriver</span> d<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    public static void test(WebDriver d) &#123;
 
-		<span class="token comment">// d.get("https://jingyan.baidu.com/article/75ab0bcb7237cbd6864db208.html");</span>
-		<span class="token comment">//</span>
-		<span class="token comment">// WebElement e =</span>
-		<span class="token comment">// d.findElement(By.xpath("/html/body/div[3]/section/div[4]/div/ul/li[3]/a"));</span>
-		<span class="token comment">//</span>
-		<span class="token comment">// JavascriptExecutor js = (JavascriptExecutor) d;</span>
-		<span class="token comment">// js.executeScript("arguments[0].scrollIntoView()", e);</span>
-		<span class="token comment">//</span>
-		<span class="token comment">// delay(4000);</span>
-		<span class="token comment">//</span>
-		<span class="token comment">// TODO Test script</span>
-		<span class="token comment">// eg:driver.get("https://www.baidu.com/")</span>
-		<span class="token comment">// eg:driver.findElement(By.id("wd"));</span>
-		<span class="token comment">// 页面长时间加载不玩</span>
-		<span class="token comment">// d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);</span>
-		<span class="token comment">// 页面加载策略</span>
+        // d.get(&quot;https://jingyan.baidu.com/article/75ab0bcb7237cbd6864db208.html&quot;);
+        //
+        // WebElement e =
+        // d.findElement(By.xpath(&quot;/html/body/div[3]/section/div[4]/div/ul/li[3]/a&quot;));
+        //
+        // JavascriptExecutor js = (JavascriptExecutor) d;
+        // js.executeScript(&quot;arguments[0].scrollIntoView()&quot;, e);
+        //
+        // delay(4000);
+        //
+        // TODO Test script
+        // eg:driver.get(&quot;https://www.baidu.com/&quot;)
+        // eg:driver.findElement(By.id(&quot;wd&quot;));
+        // 页面长时间加载不玩
+        // d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        // 页面加载策略
 
-		<span class="token comment">// stoptLoad st= new stoptLoad(d,8);</span>
-		<span class="token comment">//// st.start();</span>
-		<span class="token comment">// d.get("http://114.215.176.95:60505/FindU");</span>
-		<span class="token comment">//</span>
-		<span class="token comment">//</span>
+        // stoptLoad st= new stoptLoad(d,8);
+        //// st.start();
+        // d.get(&quot;http://114.215.176.95:60505/FindU&quot;);
+        //
+        //
 
-		d<span class="token punctuation">.</span><span class="token function">manage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">window</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">maximize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token comment">////</span>
-		<span class="token comment">//// d.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);</span>
-		<span class="token comment">//</span>
-		<span class="token comment">//</span>
-		<span class="token comment">// delay(15000);</span>
-		<span class="token comment">//</span>
-		<span class="token comment">//// .execute_script("window.stop()");</span>
-		<span class="token comment">//// d.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);</span>
-		<span class="token comment">// // register</span>
-		<span class="token comment">//</span>
-		<span class="token comment">// login(d);</span>
-		<span class="token comment">//</span>
-		<span class="token comment">//</span>
+        d.manage().window().maximize();
+        ////
+        //// d.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        //
+        //
+        // delay(15000);
+        //
+        //// .execute_script(&quot;window.stop()&quot;);
+        //// d.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        // // register
+        //
+        // login(d);
+        //
+        //
 
-		<span class="token comment">// System.out.println("失物招领");</span>
-		<span class="token comment">// 页面加载</span>
-		d<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"http://114.215.176.95:60505/FindU/html/signin.jsp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        // System.out.println(&quot;失物招领&quot;);
+        // 页面加载
+        d.get(&quot;http://114.215.176.95:60505/FindU/html/signin.jsp&quot;);
 
-		<span class="token function">login</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        login(d);
 
-		<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        delay(3000);
 
-		<span class="token comment">// 失物招领</span>
-		<span class="token comment">// page load</span>
+        // 失物招领
+        // page load
 
-		<span class="token class-name">WebElement</span> e <span class="token operator">=</span> <span class="token function">wait</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">className</span><span class="token punctuation">(</span><span class="token string">"post-w3layouts-ad"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"fgfg"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        WebElement e = wait(d, 10, By.className(&quot;post-w3layouts-ad&quot;));
+        System.out.println(e.getText() + &quot;fgfg&quot;);
 
-		e<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        e.click();
 
-		<span class="token comment">// page load</span>
-		e <span class="token operator">=</span> <span class="token function">wait</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"Option"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        // page load
+        e = wait(d, 10, By.name(&quot;Option&quot;));
 
-		<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">Select</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Select</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		s<span class="token punctuation">.</span><span class="token function">selectByValue</span><span class="token punctuation">(</span><span class="token string">"身份证"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        delay(200);
+        Select s = new Select(e);
+        s.selectByValue(&quot;身份证&quot;);
+        delay(200);
 
-		d<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//*[@id=\"information\"]/input"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sendKeys</span><span class="token punctuation">(</span><span class="token string">"身份证招领"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        d.findElement(By.xpath(&quot;//*[@id=\&quot;information\&quot;]/input&quot;)).sendKeys(&quot;身份证招领&quot;);
+        delay(200);
 
-		d<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//*[@id=\"information\"]/textarea"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sendKeys</span><span class="token punctuation">(</span><span class="token string">"体育场丢失的1000元丰富路，顺丰到付。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token comment">// 時間选择 动态id</span>
+        d.findElement(By.xpath(&quot;//*[@id=\&quot;information\&quot;]/textarea&quot;)).sendKeys(&quot;体育场丢失的1000元丰富路，顺丰到付。&quot;);
+        delay(200);
+        // 時間选择 动态id
 
-		<span class="token comment">// &lt;input name="act_start_time" type="text" class="text-box hasDatepicker"</span>
-		<span class="token comment">// placeholder="点击选择时间" readonly="readonly" style="cursor:pointer;" value=""</span>
-		<span class="token comment">// id="dp1604753164762"></span>
+        // &lt;input name=&quot;act_start_time&quot; type=&quot;text&quot; class=&quot;text-box hasDatepicker&quot;
+        // placeholder=&quot;点击选择时间&quot; readonly=&quot;readonly&quot; style=&quot;cursor:pointer;&quot; value=&quot;&quot;
+        // id=&quot;dp1604753164762&quot;&gt;
 
-		d<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"act_start_time"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        d.findElement(By.name(&quot;act_start_time&quot;)).click();
 
-		<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        delay(2000);
 
-		d<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[6]/td[1]/a"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        d.findElement(By.xpath(&quot;//*[@id=\&quot;ui-datepicker-div\&quot;]/table/tbody/tr[6]/td[1]/a&quot;)).click();
 
-		e <span class="token operator">=</span> d<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//*[@id=\"ui-datepicker-div\"]/div[2]/dl/dd[2]/div/a"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        e = d.findElement(By.xpath(&quot;//*[@id=\&quot;ui-datepicker-div\&quot;]/div[2]/dl/dd[2]/div/a&quot;));
 
-		<span class="token class-name">Actions</span> ac <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		ac<span class="token punctuation">.</span><span class="token function">dragAndDropBy</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		
-		<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		e<span class="token operator">=</span> d<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//*[@id=\"ui-datepicker-div\"]/div[2]/dl/dd[3]/div"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		ac<span class="token punctuation">.</span><span class="token function">dragAndDropBy</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		
-		<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">4000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		d<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//*[@id=\"ui-datepicker-div\"]/div[3]/button[2]"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Actions ac = new Actions(d);
+        ac.dragAndDropBy(e, 50,0).perform();
 
-		<span class="token comment">//</span>
+        delay(200);
+        e= d.findElement(By.xpath(&quot;//*[@id=\&quot;ui-datepicker-div\&quot;]/div[2]/dl/dd[3]/div&quot;));
+        ac.dragAndDropBy(e, 50,0).perform();
 
-		d<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"GetSite"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sendKeys</span><span class="token punctuation">(</span><span class="token string">"篮球程2序化仓"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        delay(4000);
+        d.findElement(By.xpath(&quot;//*[@id=\&quot;ui-datepicker-div\&quot;]/div[3]/button[2]&quot;)).click();
 
-		d<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"Contact"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sendKeys</span><span class="token punctuation">(</span><span class="token string">"120123123123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		e <span class="token operator">=</span> d<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"Value"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		e<span class="token punctuation">.</span><span class="token function">sendKeys</span><span class="token punctuation">(</span><span class="token string">"2000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        //
 
-		<span class="token class-name">JavascriptExecutor</span> js <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">JavascriptExecutor</span><span class="token punctuation">)</span> d<span class="token punctuation">;</span>
-		js<span class="token punctuation">.</span><span class="token function">executeScript</span><span class="token punctuation">(</span><span class="token string">"arguments[0].scrollIntoView()"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        d.findElement(By.name(&quot;GetSite&quot;)).sendKeys(&quot;篮球程2序化仓&quot;);
 
-		d<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"fileselect"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sendKeys</span><span class="token punctuation">(</span><span class="token string">"D:\\平滑滤波.png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        d.findElement(By.name(&quot;Contact&quot;)).sendKeys(&quot;120123123123&quot;);
+        e = d.findElement(By.name(&quot;Value&quot;));
+        e.sendKeys(&quot;2000&quot;);
 
-		d<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//*[@id=\"information\"]/div[5]/input[5]"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        JavascriptExecutor js = (JavascriptExecutor) d;
+        js.executeScript(&quot;arguments[0].scrollIntoView()&quot;, e);
 
-		<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token comment">// d.close();</span>
-	<span class="token punctuation">&#125;</span>
+        d.findElement(By.id(&quot;fileselect&quot;)).sendKeys(&quot;D:\\平滑滤波.png&quot;);
 
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token comment">// Run main function to test your script.</span>
-		<span class="token class-name">DesiredCapabilities</span> caps <span class="token operator">=</span> <span class="token class-name">DesiredCapabilities</span><span class="token punctuation">.</span><span class="token function">chrome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		caps<span class="token punctuation">.</span><span class="token function">setCapability</span><span class="token punctuation">(</span><span class="token string">"pageLoadStrategy"</span><span class="token punctuation">,</span> <span class="token string">"none"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">WebDriver</span> driver <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChromeDriver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
-			<span class="token function">test</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-			e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
-			driver<span class="token punctuation">.</span><span class="token function">quit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-	<span class="token punctuation">&#125;</span>
+        d.findElement(By.xpath(&quot;//*[@id=\&quot;information\&quot;]/div[5]/input[5]&quot;)).click();
 
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        delay(3000);
+        // d.close();
+    &#125;
 
+    public static void main(String[] args) &#123;
+        // Run main function to test your script.
+        DesiredCapabilities caps = DesiredCapabilities.chrome();
+        caps.setCapability(&quot;pageLoadStrategy&quot;, &quot;none&quot;);
+        WebDriver driver = new ChromeDriver();
+        try &#123;
+            test(driver);
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            driver.quit();
+        &#125;
+    &#125;
 
+&#125;
+</code></pre>
 <p>当加载页面时间很长时，导致之后的代码执行不到或者超时，就看下面文章。</p>
 <ol>
-<li>method1<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//	加载不完页面 driver卡死情况 自动设置线程停止加载事件</span>
-	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> stoptLoad <span class="token keyword">extends</span> <span class="token class-name">Thread</span><span class="token punctuation">&#123;</span>
-		<span class="token class-name">WebDriver</span> driver <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-		<span class="token keyword">int</span> sec <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
-		<span class="token keyword">public</span> <span class="token function">stoptLoad</span><span class="token punctuation">(</span><span class="token class-name">WebDriver</span> driver<span class="token punctuation">,</span><span class="token keyword">int</span> sec<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-			<span class="token keyword">this</span><span class="token punctuation">.</span>driver <span class="token operator">=</span> driver<span class="token punctuation">;</span>
-			<span class="token keyword">this</span><span class="token punctuation">.</span>sec <span class="token operator">=</span> sec<span class="token punctuation">;</span>
-		<span class="token punctuation">&#125;</span>
-		
-		<span class="token annotation punctuation">@Override</span>
-		<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-			<span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
-				<span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span>sec<span class="token operator">*</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-			<span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-				e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-			<span class="token punctuation">&#125;</span>
-			
-			<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">JavascriptExecutor</span><span class="token punctuation">)</span> driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">executeScript</span><span class="token punctuation">(</span><span class="token string">"window.stop();"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-			
-		<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li><p>method1</p>
+<pre><code class="java">//    加载不完页面 driver卡死情况 自动设置线程停止加载事件
+ public static class stoptLoad extends Thread&#123;
+     WebDriver driver = null;
+     int sec = 0; 
+     public stoptLoad(WebDriver driver,int sec)&#123;
+         this.driver = driver;
+         this.sec = sec;
+     &#125;
 
+     @Override
+     public void run() &#123;
+         try &#123;
+             Thread.sleep(sec*1000);
+         &#125; catch (InterruptedException e) &#123;
+             e.printStackTrace();
+         &#125;
 
+         ((JavascriptExecutor) driver).executeScript(&quot;window.stop();&quot;);
 
+     &#125;
+</code></pre>
 </li>
 </ol>
-<p><a target="_blank" rel="noopener" href="http://www.cocoachina.com/articles/33241">参考文章-ChromeDriver PageLoadStrategy 使用配置</a></p>
-<ol start="2">
-<li>method2<pre class="line-numbers language-java" data-language="java"><code class="language-java">
-<span class="token class-name">DesiredCapabilities</span> caps <span class="token operator">=</span> <span class="token class-name">DesiredCapabilities</span><span class="token punctuation">.</span><span class="token function">chrome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		caps<span class="token punctuation">.</span><span class="token function">setCapability</span><span class="token punctuation">(</span><span class="token string">"pageLoadStrategy"</span><span class="token punctuation">,</span> <span class="token string">"eager"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token class-name">WebDriver</span> driver <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChromeDriver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code>
 
-<span class="token comment">//使用eager加载page方式</span>
-<span class="token comment">//搭配wait</span>
-<span class="token comment">//三个参数分别是 driver实例，超时时长(秒)，轮询间隔（毫秒）</span>
 
-<span class="token class-name">WebDriverWait</span> webDriverWait <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebDriverWait</span><span class="token punctuation">(</span>driver<span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">WebDriverWait</span> wait<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">WebDriverWait</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">presenceOfElementLocated</span><span class="token punctuation">(</span> <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"/html/body/header/div[2]/div/div[2]/a"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+[参考文章-ChromeDriver PageLoadStrategy 使用配置](http://www.cocoachina.com/articles/33241)
 
-</li>
-</ol>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">
-<span class="token comment">//用在加载页面时 封装好</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">WebElement</span> <span class="token function">wait</span><span class="token punctuation">(</span><span class="token class-name">WebDriver</span> d<span class="token punctuation">,</span> <span class="token keyword">int</span> sec<span class="token punctuation">,</span><span class="token class-name">By</span> by<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-		<span class="token class-name">WebDriverWait</span> wait<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">WebDriverWait</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span>sec<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword">return</span> wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">presenceOfElementLocated</span><span class="token punctuation">(</span>by<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//匿名内部类方式</span>
-webDriverWait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">WebDriver</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token annotation punctuation">@Override</span>
-	<span class="token comment">//会在延迟时间内，每次轮询执行此方法，</span>
-	<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">apply</span><span class="token punctuation">(</span><span class="token class-name">WebDriver</span> webDriver<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Predicate等待"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	
-	<span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">/*该方法没有返回值，也不会抛出异常，等待的最长时间就是用户设置的超时时长
-*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">第二个方法 返回值是一个泛型类型 <span class="token class-name">V</span> ，参数是一个函数接口 <span class="token class-name">Function</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> <span class="token class-name">T</span><span class="token punctuation">,</span> <span class="token class-name">V</span><span class="token punctuation">></span></span>
-其中 <span class="token operator">?</span> <span class="token keyword">super</span> <span class="token class-name">T</span> 表示该参数必须是<span class="token class-name">T</span>或<span class="token class-name">T</span>的父类 。 <span class="token class-name">V</span> 表示该参数和返回值是相同的类型
+2. method2
+```java
 
-<span class="token class-name">WebElement</span> ele <span class="token operator">=</span> webDriverWait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">WebDriver</span><span class="token punctuation">,</span> <span class="token class-name">WebElement</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token annotation punctuation">@Override</span>
-	<span class="token keyword">public</span> <span class="token class-name">WebElement</span> <span class="token function">apply</span><span class="token punctuation">(</span><span class="token class-name">WebDriver</span> webDriver<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	<span class="token keyword">return</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">".//a[text()='新闻']"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- 
+DesiredCapabilities caps = DesiredCapabilities.chrome();
+        caps.setCapability(&quot;pageLoadStrategy&quot;, &quot;eager&quot;);
+        WebDriver driver = new ChromeDriver();
+
+//使用eager加载page方式
+//搭配wait
+//三个参数分别是 driver实例，超时时长(秒)，轮询间隔（毫秒）
+
+WebDriverWait webDriverWait = new WebDriverWait(driver,5,1000);
+WebDriverWait wait=new WebDriverWait(d,10);
+        wait.until(ExpectedConditions.presenceOfElementLocated( By.xpath(&quot;/html/body/header/div[2]/div/div[2]/a&quot;)));
+</code></pre>
+<pre><code class="java">
+//用在加载页面时 封装好
+public static WebElement wait(WebDriver d, int sec,By by) &#123;
+        WebDriverWait wait=new WebDriverWait(d,sec);
+        return wait.until(ExpectedConditions.presenceOfElementLocated(by));
+    &#125;</code></pre>
+<pre><code class="java">//匿名内部类方式
+webDriverWait.until(new Predicate&lt;WebDriver&gt;() &#123;
+    @Override
+    //会在延迟时间内，每次轮询执行此方法，
+    public boolean apply(WebDriver webDriver) &#123;
+    System.out.println(&quot;Predicate等待&quot;);
+
+    return false;
+    &#125;
+&#125;);
+/*该方法没有返回值，也不会抛出异常，等待的最长时间就是用户设置的超时时长
+*/</code></pre>
+<pre><code class="java">第二个方法 返回值是一个泛型类型 V ，参数是一个函数接口 Function&lt;? super T, V&gt;
+其中 ? super T 表示该参数必须是T或T的父类 。 V 表示该参数和返回值是相同的类型
+
+WebElement ele = webDriverWait.until(new Function&lt;WebDriver, WebElement&gt;() &#123;
+@Override
+    public WebElement apply(WebDriver webDriver) &#123;
+    return driver.findElement(By.xpath(&quot;.//a[text()=&#39;新闻&#39;]&quot;));
+    &#125;
+&#125;);
+
 
 上面的方法会一直尝试查找元素，直到找到符合定位条件的元素出现在DOM树中，并返回该元素的对象。这个显示等待方法的作用和隐式等待功能是类似的
 我们把它改造一下，换成一个找不到的元素看看
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fiskeryang/p/13516163.html">参考文章——Selenium隐式等待与显示等待的选择</a></p>
 <p>当加载页面空白页时或者404（并不是每次都是加载不出来）<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yuanxian/p/5591039.html">参考文章-ajax请求失败 chrome报错net::ERR_INCOMPLETE_CHUNKED_ENCODING 问题原因</a></p>
 <p>元素搜索快慢方法比较</p>
@@ -984,6 +991,52 @@ webDriverWait<span class="token punctuation">.</span><span class="token function
     
 
     
+        <style>
+    .mvaline-card {
+        margin: 1.5rem auto;
+    }
+
+    .mvaline-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+</style>
+
+<div class="card mvaline-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="mvcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/minivaline/MiniValine.js"></script>
+<script>
+    new MiniValine({
+        el: '#mvcomments',
+        appId: 'zhM0AOiqle17oPoE84CoYw1e-gzGzoHsz',
+        appKey: 'itmzT1JbXfAjVwMqDhGPzU45',
+        mode: 'DesertsP',
+        placeholder: 'Write a Comment',
+        pathname: window.location.pathname,
+        lang: '',
+        adminEmailMd5: 'de8a7aa53d07e6b6bceb45c64027763d',
+        tagMeta: ["管理员", "小伙伴", "访客"],
+        master: ["de8a7aa53d07e6b6bceb45c64027763d"],
+        friends: ["b5bd5d836c7a0091aa8473e79ed4c25e", "adb7d1cd192658a55c0ad22a3309cecf", "3ce1e6c77b4910f1871106cb30dc62b0", "cfce8dc43725cc14ffcd9fb4892d5bfc"],
+        math: true,
+        md: true,
+        enableQQ: false,
+        NoRecordIP: false,
+        visitor: true,
+        maxNest: 6,
+        pageSize: 6,
+        serverURLs: '',
+        emoticonUrl: ["https://cdn.jsdelivr.net/npm/alus@latest", "https://cdn.jsdelivr.net/gh/MiniValine/qq@latest", "https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest", "https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest", "https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest", "https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest"],
+    });
+</script>
+
+    
 
     
 
@@ -1127,10 +1180,6 @@ webDriverWait<span class="token punctuation">.</span><span class="token function
 
 
 <!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
 
     </div>
@@ -1368,13 +1417,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:2321139456@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -1384,7 +1433,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2321139456" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2321139456" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 
