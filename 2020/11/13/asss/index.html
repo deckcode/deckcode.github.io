@@ -3,7 +3,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="noticase">
     <meta name="description" content="personl technology blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +29,11 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0"></head>
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="noticase" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -45,7 +49,7 @@
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -466,10 +470,25 @@
                 
 
                 
-
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    912
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    3 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
@@ -491,38 +510,38 @@
 <li>isEnabled 查看是否可以操作</li>
 </ul>
 <h2 id="复杂"><a href="#复杂" class="headerlink" title="复杂"></a>复杂</h2><h3 id="组合键操作"><a href="#组合键操作" class="headerlink" title="组合键操作"></a>组合键操作</h3><p>一般使用click方法，如果是chrome浏览器，点击超链接 同时按ctrl会打开新标签，shift打开新的窗口。</p>
-<pre><code class="java">
-Actions a = new Actions(driver);//点击按下
-a.keyDown(Keys.CONTROL).perform();
-driver.findElement(By.xpath(&quot;&quot;)).click();
-a.keyUp(Keys.CONTROL).perform();//点解结束
-</code></pre>
+<pre class="line-numbers language-java"><code class="language-java">
+Actions a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//点击按下</span>
+a<span class="token punctuation">.</span><span class="token function">keyDown</span><span class="token punctuation">(</span>Keys<span class="token punctuation">.</span>CONTROL<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span>By<span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span><span class="token function">keyUp</span><span class="token punctuation">(</span>Keys<span class="token punctuation">.</span>CONTROL<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//点解结束</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="组合鼠标操作"><a href="#组合鼠标操作" class="headerlink" title="组合鼠标操作"></a>组合鼠标操作</h3><ol>
 <li><p> 鼠标左键点击 (可以来打开二级菜单)</p>
-<pre><code class="java">Actions action = new Actions(driver);action.click();// 鼠标左键在当前停留的位置做单击操作  
-action.click(element)// 鼠标左键点击指定的元素 
-action.contextclick(element)//;鼠标右键点击指定元素
-action.doubleClick(element);//鼠标双击元素</code></pre>
+<pre class="line-numbers language-java"><code class="language-java">Actions action <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">;</span>action<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 鼠标左键在当前停留的位置做单击操作  </span>
+action<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token comment" spellcheck="true">// 鼠标左键点击指定的元素 </span>
+action<span class="token punctuation">.</span><span class="token function">contextclick</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//;鼠标右键点击指定元素</span>
+action<span class="token punctuation">.</span><span class="token function">doubleClick</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//鼠标双击元素</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>鼠标移动操作 (可以来打开二级菜单)</p>
-<pre><code class="java">action.moveToElement(element);// 将鼠标移到 element 元素中点 
-action.moveToElement(element,xOffset,yOffset) 
-//表示以当前element相对移动的位移量</code></pre>
+<pre class="line-numbers language-java"><code class="language-java">action<span class="token punctuation">.</span><span class="token function">moveToElement</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 将鼠标移到 element 元素中点 </span>
+action<span class="token punctuation">.</span><span class="token function">moveToElement</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span>xOffset<span class="token punctuation">,</span>yOffset<span class="token punctuation">)</span> 
+<span class="token comment" spellcheck="true">//表示以当前element相对移动的位移量</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>鼠标长按操作</p>
-<pre><code class="java">action.clickAndHold();// 鼠标悬停在当前位置，既点击并且不释放  
-action.clickAndHold(Element);// 鼠标悬停在 Element 元素的位置 </code></pre>
+<pre class="line-numbers language-java"><code class="language-java">action<span class="token punctuation">.</span><span class="token function">clickAndHold</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 鼠标悬停在当前位置，既点击并且不释放  </span>
+action<span class="token punctuation">.</span><span class="token function">clickAndHold</span><span class="token punctuation">(</span>Element<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 鼠标悬停在 Element 元素的位置 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li><p>鼠标释放操 </p>
-<pre><code class="java">action.release();// 释放鼠标 </code></pre>
+<pre class="line-numbers language-java"><code class="language-java">action<span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 释放鼠标 </span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p> 鼠标拖拽动作 </p>
-<pre><code class="java">action.dragAndDrop(source,target); //将source元素拖拽到target
-action.dragAndDrop(source,xOffset,yOffset); 
-//可以由以上简单操作组合
-action.clickAndHold(source).moveToElement(target).perform();   action.release(); 
-//或者
-action.clickAndHold(source).moveToElement(target).release().build().perform();</code></pre>
+<pre class="line-numbers language-java"><code class="language-java">action<span class="token punctuation">.</span><span class="token function">dragAndDrop</span><span class="token punctuation">(</span>source<span class="token punctuation">,</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//将source元素拖拽到target</span>
+action<span class="token punctuation">.</span><span class="token function">dragAndDrop</span><span class="token punctuation">(</span>source<span class="token punctuation">,</span>xOffset<span class="token punctuation">,</span>yOffset<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment" spellcheck="true">//可以由以上简单操作组合</span>
+action<span class="token punctuation">.</span><span class="token function">clickAndHold</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">moveToElement</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   action<span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment" spellcheck="true">//或者</span>
+action<span class="token punctuation">.</span><span class="token function">clickAndHold</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">moveToElement</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <hr>
@@ -543,40 +562,40 @@ action.clickAndHold(source).moveToElement(target).release().build().perform();</
 <h3 id="select菜单，选择项"><a href="#select菜单，选择项" class="headerlink" title="select菜单，选择项"></a>select菜单，选择项</h3><blockquote>
 <p>获取<br>WebElement element = driver.finElement( select 的 Xpath);<br>Select select = new Select(element);<br>选择<br>selectByIndex(index);<br>selectByVisibleText(String text); 通过匹配到的字符<br>selectByValue(String value);通过匹配 标签的vlaue属性</p>
 </blockquote>
-<h3 id="Window-Tag切换"><a href="#Window-Tag切换" class="headerlink" title="Window/Tag切换"></a>Window/Tag切换</h3><pre><code class="java">driver.getWindowHandle();返会字符串，获取当前窗口的句柄
-driver.getWindowHandles();返回Set&lt;String&gt; 获取所有的窗口
-driver.switchTo().window(窗口的String); 来跳转窗口（无论是新的标签还是新的浏览器窗口都可以通过此方法跳转）。</code></pre>
+<h3 id="Window-Tag切换"><a href="#Window-Tag切换" class="headerlink" title="Window/Tag切换"></a>Window/Tag切换</h3><pre class="line-numbers language-java"><code class="language-java">driver<span class="token punctuation">.</span><span class="token function">getWindowHandle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>返会字符串，获取当前窗口的句柄
+driver<span class="token punctuation">.</span><span class="token function">getWindowHandles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>返回Set<span class="token operator">&lt;</span>String<span class="token operator">></span> 获取所有的窗口
+driver<span class="token punctuation">.</span><span class="token function">switchTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">window</span><span class="token punctuation">(</span>窗口的String<span class="token punctuation">)</span><span class="token punctuation">;</span> 来跳转窗口（无论是新的标签还是新的浏览器窗口都可以通过此方法跳转）。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>注意窗口间切换，要关闭窗口时，不能使用 qiut（quit driver就释放了，不能使用driver，close只是关闭当前window 或者 标签 还可以使用driver，当然close最后一个窗口或者标签时就会关闭浏览器 此时driver也不会有效）</p>
-<h3 id="滚动定位到特定元素位置"><a href="#滚动定位到特定元素位置" class="headerlink" title="滚动定位到特定元素位置"></a>滚动定位到特定元素位置</h3><pre><code class="java">JavascriptExecutor scroll = (JavascriptExecutor) driver;
-scroll.executeScript(&quot;arguments[0].scrollIntoView();&quot;, 指定元素);</code></pre>
+<h3 id="滚动定位到特定元素位置"><a href="#滚动定位到特定元素位置" class="headerlink" title="滚动定位到特定元素位置"></a>滚动定位到特定元素位置</h3><pre class="line-numbers language-java"><code class="language-java">JavascriptExecutor scroll <span class="token operator">=</span> <span class="token punctuation">(</span>JavascriptExecutor<span class="token punctuation">)</span> driver<span class="token punctuation">;</span>
+scroll<span class="token punctuation">.</span><span class="token function">executeScript</span><span class="token punctuation">(</span><span class="token string">"arguments[0].scrollIntoView();"</span><span class="token punctuation">,</span> 指定元素<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h3><p>可以通过driver.get(新的URL)进行网址跳转，也可以通过Navigation的to（新的url）实现。</p>
-<pre><code class="java">
-Navigation n= driver.navigate();
-        n.back();
-        delay(2000);
-        n.refresh();
-        delay(2000);
-        n.forward();    
-        delay(2000);
-        n.to(&quot;http://www.icourse163.org/home.htm?userId=1400999509#/home/course&quot;);
-        delay(2000);
+<pre class="line-numbers language-java"><code class="language-java">
+Navigation n<span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">navigate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        n<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        n<span class="token punctuation">.</span><span class="token function">refresh</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        n<span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        n<span class="token punctuation">.</span><span class="token function">to</span><span class="token punctuation">(</span><span class="token string">"http://www.icourse163.org/home.htm?userId=1400999509#/home/course"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        n.to(&quot;https://www.baidu.com/s?tn=02049043_8_pg&amp;ch=7&amp;ie=utf-8&amp;wd=selenium%20%E6%93%8D%E4%BD%9C%E8%BF%9B%E5%BA%A6%E6%9D%A1&quot;);</code></pre>
-<h3 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h3><pre><code class="javascript">1.有id，并且唯一，直接写id
-driver.switchTo().frame(&quot;iframe_id&quot;);、、//通过iframe的id或者name属性进行定位
-2.有name，并且唯一，直接写name
-driver.switchTo().frame(&quot;iframe_name&quot;);
-3.无id，无name,先定位iframe元素
-driver.swtichTo().frame(Webelement);//通过（目标iframe）webelement元素进行定位
+        n<span class="token punctuation">.</span><span class="token function">to</span><span class="token punctuation">(</span><span class="token string">"https://www.baidu.com/s?tn=02049043_8_pg&amp;ch=7&amp;ie=utf-8&amp;wd=selenium%20%E6%93%8D%E4%BD%9C%E8%BF%9B%E5%BA%A6%E6%9D%A1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h3><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token number">1</span><span class="token punctuation">.</span>有id，并且唯一，直接写id
+driver<span class="token punctuation">.</span><span class="token function">switchTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span><span class="token string">"iframe_id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>、、<span class="token comment" spellcheck="true">//通过iframe的id或者name属性进行定位</span>
+<span class="token number">2</span><span class="token punctuation">.</span>有name，并且唯一，直接写name
+driver<span class="token punctuation">.</span><span class="token function">switchTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span><span class="token string">"iframe_name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">3</span><span class="token punctuation">.</span>无id，无name<span class="token punctuation">,</span>先定位iframe元素
+driver<span class="token punctuation">.</span><span class="token function">swtichTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>Webelement<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//通过（目标iframe）webelement元素进行定位</span>
 
-driver.switchTo().frame(iframe_index);//没有以上属性也可以通过  通过下标（整个html文档中第几个iframe）定位到iframe
+driver<span class="token punctuation">.</span><span class="token function">switchTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>iframe_index<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//没有以上属性也可以通过  通过下标（整个html文档中第几个iframe）定位到iframe</span>
 
-driver.switchTo().defaultContent();//切回主文档
-driver.switch_to.parent_frame();//从当前iframe切回父iframe 如果当前已是主文档，则无效果</code></pre>
+driver<span class="token punctuation">.</span><span class="token function">switchTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">defaultContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//切回主文档</span>
+driver<span class="token punctuation">.</span>switch_to<span class="token punctuation">.</span><span class="token function">parent_frame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//从当前iframe切回父iframe 如果当前已是主文档，则无效果</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>参考：</p>
 <ol>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoxiaolvdou/p/9316805.html">selenium切换到iframe</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Lily_XL/article/details/51489116?utm_medium=distribute.pc_relevant.none-task-blog-OPENSEARCH-3.edu_weight&depth_1-utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-3.edu_weight">Selenium WebDriver 中鼠标事件</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Lily_XL/article/details/51489116?utm_medium=distribute.pc_relevant.none-task-blog-OPENSEARCH-3.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-3.edu_weight">Selenium WebDriver 中鼠标事件</a></li>
 </ol>
 
             </div>
@@ -1162,6 +1181,9 @@ driver.switch_to.parent_frame();//从当前iframe切回父iframe 如果当前已
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">2.4k</span>&nbsp;字
+            
             
             
             
@@ -1338,7 +1360,7 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>
