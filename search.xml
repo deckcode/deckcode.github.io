@@ -5,10 +5,10 @@
     
     <entry>
       <title>hexo图片插入问题</title>
-      <link href="2020/11/14/hexo-tu-pian-cha-ru-wen-ti/"/>
-      <url>2020/11/14/hexo-tu-pian-cha-ru-wen-ti/</url>
+      <link href="2020/12/14/hexo-tu-pian-cha-ru-wen-ti/"/>
+      <url>2020/12/14/hexo-tu-pian-cha-ru-wen-ti/</url>
       
-        <content type="html"><![CDATA[<a id="more"></a><p><a href="./hexo2/1.png">图片</a></p>]]></content>
+        <content type="html"><![CDATA[<a id="more"></a><p><a href="hexo2/1.png">图片</a></p>]]></content>
       
       
       
