@@ -10,7 +10,7 @@
   <id>https://darktom.gitee.io/</id>
   
   <author>
-    <name>bug</name>
+    <name>skycase</name>
     
   </author>
   
@@ -27,6 +27,34 @@
     <summary type="html">hexo图片插入不显示问题</summary>
     
     
+    
+    
+    <category term="hexo" scheme="https://darktom.gitee.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo官方文档</title>
+    <link href="https://darktom.gitee.io/2020/11/16/hexo-guan-fang-wen-dang/"/>
+    <id>https://darktom.gitee.io/2020/11/16/hexo-guan-fang-wen-dang/</id>
+    <published>2020-11-16T07:07:13.000Z</published>
+    <updated>2020-11-14T07:15:45.919Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+
+&lt;h1 id=&quot;test&quot;&gt;&lt;a href=&quot;#test&quot; class=&quot;headerlink&quot; title=&quot;test&quot;&gt;&lt;/a&gt;test&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="个人静态博客网站搭建" scheme="https://darktom.gitee.io/categories/persblogNet/"/>
     
     
     <category term="hexo" scheme="https://darktom.gitee.io/tags/hexo/"/>

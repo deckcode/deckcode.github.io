@@ -39,7 +39,7 @@
 
    <style>
     body{
-       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-image: url(/medias/back/blogBack2.jpg);
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
@@ -321,10 +321,23 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -510,7 +523,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">bug</a>
+                    <a href="/about" rel="external nofollow noreferrer">skycase</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -533,7 +546,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">bug</a>
+                    <a href="/about" target="_blank">skycase</a>
                     !
                 </span>
             </div>
@@ -775,29 +788,33 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/12/14/hexo-tu-pian-cha-ru-wen-ti/">
+                <a href="/2020/11/16/hexo-guan-fang-wen-dang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="hexo图片插入问题">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="hexo官方文档">
                         
-                        <span class="card-title">hexo图片插入问题</span>
+                        <span class="card-title">hexo官方文档</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            查看官方文档
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-16
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            bug
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/persblogNet/" class="post-category">
+                                    个人静态博客网站搭建
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -824,7 +841,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="hexo 参考">
+                        <img src="/medias/back/blogBack4.jpg" class="responsive-img" alt="hexo 参考">
                         
                         <span class="card-title">hexo 参考</span>
                     </div>
@@ -842,7 +859,7 @@
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            bug
+                            skycase
                             
                         </span>
                     </div>
@@ -893,7 +910,7 @@
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
             + '来源: noticase<br />'
-            + '文章作者: bug<br />'
+            + '文章作者: skycase<br />'
             + '文章链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
 
@@ -1088,7 +1105,7 @@
                 <span id="year">2020</span>
             
             <span id="year">2020</span>
-            <a href="/about" target="_blank">bug</a>
+            <a href="/about" target="_blank">skycase</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>

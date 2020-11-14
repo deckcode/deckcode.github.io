@@ -23,6 +23,31 @@
     
     
     <entry>
+      <title>hexo官方文档</title>
+      <link href="2020/11/16/hexo-guan-fang-wen-dang/"/>
+      <url>2020/11/16/hexo-guan-fang-wen-dang/</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a><h1 id="test"><a href="#test" class="headerlink" title="test"></a>test</h1><p><a href="https://hexo.bootcss.com/docs/front-matter.html">地址</a></p><h2 id="引用本地图片"><a href="#引用本地图片" class="headerlink" title="引用本地图片"></a>引用本地图片</h2><p><img src="1.png" alt="alt"></p><h2 id="引用外网图片"><a href="#引用外网图片" class="headerlink" title="引用外网图片"></a>引用外网图片</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p><img src="https://static.runoob.com/images/mix/rfwDB3L.png" alt="https://static.runoob.com/images/mix/rfwDB3L.png"></p><h3 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h3><p><img src="https://i.loli.net/2020/11/01/gFYT3JaeEqKuoLO.png" alt="登录实现.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 个人静态博客网站搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>video</title>
       <link href="2020/11/14/video/"/>
       <url>2020/11/14/video/</url>
