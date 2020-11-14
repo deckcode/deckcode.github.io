@@ -268,15 +268,15 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #b1b0b0 0%, #f6e197 100%);
+    background-image: linear-gradient(to right, #454545 0%, #eec228 100%);
 }
 
 .text-color {
-    color: #0f9d58 !important;
+    color: #ffffff !important;
 }
 
 .white-color {
-    color: #529c80;
+    color: #ffffff;
 }
 
 .progress-bar {
@@ -672,9 +672,9 @@ header .go-back i {
     0%,
     100% {
         background: rgba(156, 39, 176, 0.75);
-        background: linear-gradient(45deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
-        background: -moz-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
-        background: -webkit-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
+        background: linear-gradient(45deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.75) 100%);
+        background: -moz-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176,0.75) 100%);
+        background: -webkit-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.75) 100%);
     }
 
     16% {
@@ -988,7 +988,7 @@ article .article-tags .chip {
     position: absolute;
     box-sizing: border-box;
     z-index: 200;
-    background-color: #fff;
+    background-color: #d5b73c;
     font-weight: 500;
 }
 
