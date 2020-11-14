@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>noticase</title>
   
-  
+  <subtitle>sky of case</subtitle>
   <link href="https://darktom.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://darktom.gitee.io/"/>
