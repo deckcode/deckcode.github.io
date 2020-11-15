@@ -499,14 +499,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    570
+                    797
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -613,14 +613,14 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token punctuation">{</span><span class="token operator">%</span> bili bili视频id  <span class="token operator">%</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>test</p>
 <ul>
-<li><p>1  </p>
+<li><p>1  bili使用</p>
 <pre><code>{% bili aid=286010105&amp;bvid=BV1zf4y1y7us&amp;cid=201500951&amp;page=1 %}</code></pre>
 <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=286010105&amp;bvid=BV1zf4y1y7us&amp;cid=201500951&amp;page=1" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" frameborder="0" framespacing="no" border="no" scrolling="no" quality="high" allowfullscreen=""></iframe></div>
 </li>
-<li><p>2 iframe标签 </p>
+<li><p>2 自带的iframe标签 </p>
 <pre><code>{% iframe //player.bilibili.com/player.html?aid=286010105&amp;bvid=BV1zf4y1y7us&amp;cid=201500951&amp;page=1 %}</code></pre>
 <iframe src="//player.bilibili.com/player.html?aid=286010105&amp;bvid=BV1zf4y1y7us&amp;cid=201500951&amp;page=1" width="100%" height="300" frameborder="0" loading="lazy" allowfullscreen=""></iframe></li>
-<li><p>3 </p>
+<li><p>3 bili2使用</p>
 <pre><code>{%  bili2 aid=286010105&amp;bvid=BV1zf4y1y7us&amp;cid=201500951&amp;page=1  %}</code></pre>
 <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=286010105&amp;bvid=BV1zf4y1y7us&amp;cid=201500951&amp;page=1" scrolling="no" border="0" quality="high" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe></div>
 <h2 id="6-文章推荐"><a href="#6-文章推荐" class="headerlink" title="6.文章推荐"></a>6.文章推荐</h2></li>
@@ -632,6 +632,15 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <ol start="2">
 <li>hexo recommend即可</li>
 </ol>
+<h2 id="7-baidu-analyze-增添文章访问统计"><a href="#7-baidu-analyze-增添文章访问统计" class="headerlink" title="7.baidu analyze 增添文章访问统计"></a>7.baidu analyze 增添文章访问统计</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013066244/article/details/71056834">参考文章</a></p>
+<p>会报以下错误:</p>
+<blockquote>
+<p>代码安装错误<br>您所选的站点首页安装了账户”che*<strong>**</strong>gsp”的站点”pur**<strong>**</strong>.cn”对应的代码（站点ID后四位93ef）<br>若确认站点设置、选择无误，则建议在标签前添加当前所选站点”darktom.gitee.io”对应的代码</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.xiaoyunhua.com/2698.html">参照这篇文章排错</a></p>
+<p>确实发现自己没有添加baidu analyze 却有 hm.js 请求，查看原有代码的值这是设计作者在默认你没有开启 baidu analyze功能情况下用的作者 的id，也就是当你开启自己的功能后，不关闭作者的baidu analyze请求，那么自己的实际数据（网站访问人数，次数）就不能显示出来，所以。</p>
+<p>找到当前位置将红线部分注释掉即可</p>
+<p><img src="3.png" alt="alt"></p>
 <div><h1>推荐文章<span style="font-size:0.45em; color:gray">（由<a target="_blank" rel="noopener" href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h1><ul><li><a href="https://darktom.gitee.io/2020/12/14/hexo-tu-pian-cha-ru-wen-ti/">hexo图片插入问题</a></li><li><a href="https://darktom.gitee.io/2020/11/16/hexo-guan-fang-wen-dang/">hexo官方文档</a></li><li><a href="https://darktom.gitee.io/2020/11/14/hexo-can-kao/">hexo 参考</a></li><li><a target="_blank" rel="noopener" href="https://liuyifei.club/posts/hexo-520.html">Hexo 5.2.0 更新记录</a></li></ul></div>
             </div>
             <hr/>
@@ -1248,7 +1257,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.1k</span>&nbsp;字
+                class="white-color">3.4k</span>&nbsp;字
             
             
             
