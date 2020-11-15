@@ -1255,14 +1255,14 @@ article .article-tags .chip {
     overflow: auto;
 }
 
-/**
+
 #articleContent table,
 th,
 td {
     padding: 12px 13px;
     border: 1px solid #dfe2e5;
 }
-**/
+
 
 table tr:nth-child(2n),
 thead {
