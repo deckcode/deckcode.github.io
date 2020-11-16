@@ -132,13 +132,6 @@
 
   
   <url>
-    <loc>https://darktom.gitee.io/categories/persblogNet/</loc>
-    <lastmod>2020-11-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://darktom.gitee.io/categories/Hexo/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
@@ -147,6 +140,13 @@
   
   <url>
     <loc>https://darktom.gitee.io/categories/hexo/</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://darktom.gitee.io/categories/persblogNet/</loc>
     <lastmod>2020-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
