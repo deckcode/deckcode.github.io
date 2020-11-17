@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://darktom.gitee.io/2020/11/17/ma-ke-si-zhu-yi-zuo-ye/</loc>
+    
+    <lastmod>2020-11-17</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://darktom.gitee.io/2020/12/15/you-hua-cai-keng/</loc>
     
     <lastmod>2020-11-16</lastmod>
@@ -94,7 +101,21 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://darktom.gitee.io/tags/%E9%A9%AC%E5%85%8B%E6%80%9D/</loc>
+    <lastmod>2020-11-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://darktom.gitee.io/categories/hexo/</loc>
+    <lastmod>2020-11-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
   <url>
     <loc>https://darktom.gitee.io/categories/persblogNet/</loc>
@@ -104,7 +125,7 @@
   </url>
   
   <url>
-    <loc>https://darktom.gitee.io/categories/hexo/</loc>
+    <loc>https://darktom.gitee.io/categories/%E4%BD%9C%E4%B8%9A/</loc>
     <lastmod>2020-11-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
