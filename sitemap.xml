@@ -30,20 +30,6 @@
   </url>
   
   <url>
-    <loc>https://darktom.gitee.io/2020/11/14/video/</loc>
-    
-    <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://darktom.gitee.io/2019/04/24/test/</loc>
-    
-    <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://darktom.gitee.io/friends/index.html</loc>
     
     <lastmod>2020-11-13</lastmod>
@@ -92,24 +78,10 @@
     
   </url>
   
-  <url>
-    <loc>https://darktom.gitee.io/2020/11/16/asss/</loc>
-    
-    <lastmod>2020-11-08</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://darktom.gitee.io/2020/11/16/att/</loc>
-    
-    <lastmod>2020-11-08</lastmod>
-    
-  </url>
-  
 
   <url>
     <loc>https://darktom.gitee.io/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -117,14 +89,7 @@
   
   <url>
     <loc>https://darktom.gitee.io/tags/hexo/</loc>
-    <lastmod>2020-11-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://darktom.gitee.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -133,21 +98,14 @@
   
   <url>
     <loc>https://darktom.gitee.io/categories/persblogNet/</loc>
-    <lastmod>2020-11-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://darktom.gitee.io/categories/Hexo/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://darktom.gitee.io/categories/hexo/</loc>
-    <lastmod>2020-11-16</lastmod>
+    <lastmod>2020-11-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
